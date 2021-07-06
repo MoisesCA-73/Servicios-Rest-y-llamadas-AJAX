@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Add form
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+              $("button").click(function(){
+                $.ajax({url: "localhost:8080/CategoryRestService/Add", success: function(result){
+                  $("#div1").html(result);
+                }});
+              });
+            });
+            </script>  
+    </head>
+    <body>
+        <form>
+            <label for="name">Nombre:</label><br>
+            <input type="text" id="name" name="fname"><br>
+            <label for="descripcion">Descripcion:</label><br>
+            <textarea name=descripcion" cols="40" rows="5"></textarea>
+            <input type="submit">
+        </form>
+    </body>
+</html>
